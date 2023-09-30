@@ -1,0 +1,191 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Confirm your journey!!</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="images/icons/car (2).png"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+    
+<!--===============================================================================================-->
+
+</head>
+<body>
+    <div id="loading-overlay">
+        <div id="loading-icon"></div>
+        <div id="loading-text">Please Wait while we are confirming your ride..</div>
+    </div>
+    
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<div class="login100-pic js-tilt" data-tilt>
+					<img src="images/img-01.png" alt="IMG">
+				</div>
+
+				<form class="login100-form validate-form" id="nameform">
+					<main>
+                        <section id="ride-details">
+							<div class="text-box">
+								<h2><u>Ride Details</u></h2>
+                            <!-- Display ride details, car details, car number, driver name, and driver contact here -->
+                            <p><b>Ride ID: </b>12345</p>
+							<p><b>Security Code:</b> 7APK90</p>
+                            <p><b>Car: </b>Toyota Camry</p>
+                            <p><b>Number: </b>ABC-123</p>
+                            <p><b>Driver:</b> John Doe</p>
+                            <p><b>Driver Contact:</b> +1 123-456-7890</p>
+							</div>
+                            
+                        </section>
+                        &nbsp;
+                        <section id="cancel-ride">
+						
+                            <h2><u>Cancel Ride</u></h2>
+                            <p>You have 5 minutes to cancel the ride:</p>
+							<div id="clock-icon">
+								<i class="fa fa-clock-o" aria-hidden="true"></i>
+							</div>
+                            <div id="countdown-timer">5:00</div>
+                            <button class="login100-form-btn" id ="cancel-button-2">Cancel Ride</button>
+							
+                        </section>
+                        &nbsp;
+                        <section id="odoemeter-upload">
+							<div class="text-box">
+                            <h3><u>Upload Odometer Image Before your journey..</u></h3>
+                            &nbsp;
+                            <form id="odometer-form">
+                                <label for="odometer-image">Upload Odometer Image:</label>
+                                <input type="file" id="odometer-image" name="odometer-image" accept="image/*">
+                                <br>
+                                &nbsp;
+                                <button class="login100-form-btn" type="submit">Upload</button>
+								&nbsp;
+								<button class="login100-form-btn" type="submit">Start Journey</button>
+                            </form>
+						    </div> 
+							</section>
+                        </section>
+						<div class="container-login100-form-btn2">
+							<a target="_blank" href="ride-end.html"
+							<button  class="btn-danger  login100-form-btn2">
+								End Ride
+								<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+							</button></a>
+						</div>
+						
+							</form>
+						</div>
+				
+                        &nbsp;
+                    </main>
+                
+					</form>
+			
+				&nbsp;
+                &nbsp;
+				
+				
+			</div>
+			
+		</div>
+	</div>
+	
+	
+
+<link rel="stylesheet" type="text/css" href="css/loading.css">
+<!--===============================================================================================-->	
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/tilt/tilt.jquery.min.js"></script>
+	<script >
+		$('.js-tilt').tilt({
+			scale: 0.8
+		})
+	</script>
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
+    <script src="js/loadingscript.js"></script>
+	<script src="js/script-ride.js"></script>
+	<script>
+		// JavaScript code to handle feedback form
+		$(document).ready(function () {
+			// Show feedback form when "Give Feedback" button is clicked
+			$("#open-feedback-form-button").click(function () {
+				// Show the send feedback button and hide the update feedback button
+				$("#send-feedback-button").show();
+				$("#update-feedback-button").hide();
+				$("#feedback-form").show();
+			});
+	
+			// Handle sending feedback
+			$("#send-feedback-button").click(function () {
+				var feedbackText = $("#feedback-textarea").val().trim();
+				if (feedbackText !== "") {
+					// You can send the feedback data to the server here if needed
+					// For now, just display an alert
+					alert("Thanks for your feedback!");
+					// Clear the feedback form and hide it
+					$("#feedbackform")[0].reset();
+					$("#feedback-form").hide();
+				} else {
+					alert("Please enter feedback before submitting.");
+				}
+			});
+	
+			// Show the update feedback button when there is feedback to update
+			$("#open-feedback-form-button").click(function () {
+				// Check if there is feedback to update (you can customize this logic)
+				// For now, let's assume there is feedback to update
+				// Show the update feedback button and hide the send feedback button
+				$("#send-feedback-button").show();
+				$("#update-feedback-button").show();
+			});
+	
+			// Handle updating feedback
+			$("#update-feedback-button").click(function () {
+				var feedbackText = $("#feedback-textarea").val().trim();
+				if (feedbackText !== "") {
+					// You can update the feedback data on the server here if needed
+					// For now, just display an alert
+					alert("Feedback updated!");
+					// Clear the feedback form and hide it
+					$("#feedbackform")[0].reset();
+					$("#feedback-form").hide();
+				} else {
+					alert("Please enter feedback before updating.");
+				}
+			});
+		});
+	</script>
+	
+	
+<!--===============================================================================================-->
+
+
+</body>
+<footer>
+	<p>Author: Pankaj Goel, Sankalpa Pramanik, Sewanti Dutta, Ritabrata Dey</p>
+	<p> Made as part of Software Engineering project (PCC-CS591)</p>
+	<p><a href="mailto:hege@example.com"></a></p>
+  </footer>
+</html>
