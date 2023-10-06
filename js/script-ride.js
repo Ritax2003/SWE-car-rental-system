@@ -2,10 +2,10 @@ let countdownInterval;
 
 function startCountdown() {
     const timerElement = document.getElementById("countdown-timer");
-    const cancelButton = document.getElementById("cancel-button");
+    const cancelButton = document.getElementById("cancel-button-end");
 
-    let minutes = 5;
-    let seconds = 0;
+    let minutes = 0;
+    let seconds = 10;
 
     countdownInterval = setInterval(function () {
         if (minutes === 0 && seconds === 0) {
@@ -39,12 +39,12 @@ function cancelRide() {
     alert("Ride has been canceled.");
 
     // Wait for 3 seconds (adjust the time as needed)
-    setTimeout(function () {
+    setTimeout(function() {
         // Redirect the user to the user page (or any other page)
-        window.location.href = "user.html"; // Replace with the correct URL
+        window.location.href = "user.html" // Replace with the correct URL
     }, 3000); // 3000 milliseconds (3 seconds)
 }
-const cancelButton = document.getElementById("cancel-button-2");
+const cancelButton = document.getElementById("cancel-button-end");
 if (cancelButton) {
     cancelButton.addEventListener("click", cancelRide);
 }

@@ -8,7 +8,7 @@ function navigateToRideDetails() {
 
 // Attach an event listener to the button for navigation
 document.addEventListener("DOMContentLoaded", function () {
-    const viewRideDetailsButton = document.getElementById("cancel-button-2");
+    const viewRideDetailsButton = document.getElementById("cancel-button-end");
 
     if (viewRideDetailsButton) {
         viewRideDetailsButton.addEventListener("click", navigateToRideDetails);
